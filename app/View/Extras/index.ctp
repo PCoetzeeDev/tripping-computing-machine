@@ -1,5 +1,27 @@
 <div class="extras index">
 	<h2><?php echo __('Extras'); ?></h2>
+	<table>
+	    <tr>
+	        <th>Date of Birth</th>
+	        <th>Race</th>
+	        <th>Gender</th>
+	        <th>Is on Whole Bang Shoot</th>
+	        <th>Is in Gmail Contacts</th>
+	        <th>Had Previous Experience</th>
+	        <th>Height</th>
+	        <th>Chest Size</th>
+	        <th>Bra Size</th>
+	        <th>Hip Size</th>
+	        <th>Waist Size</th>
+	        <th>Suit Size</th>
+	        <th>Dress Size</th>
+	        <th>Shoe Size</th>
+	        <th>Collar Size</th>
+	        <th>Hair Colour</th>
+	        <th>Eye Colour</th>
+	        <th>Nationality</th>
+	    </tr>
+	</table>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
