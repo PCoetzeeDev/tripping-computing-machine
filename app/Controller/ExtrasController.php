@@ -7,14 +7,34 @@ App::uses('AppController', 'Controller');
  */
 class ExtrasController extends AppController {
 
+	var $uses = array('Extra', 'Race', 'Gender', 'HairColour', 'EyeColour', 'Nationality');
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
+		$filterData = array();
+		$filterConditions = array();
+		
+		$filterData['race'] = $this->Race->find('list');
+		$filterData['gender'] = $this->Gender->find('list');
+		$filterData['hair'] = $this->HairColour->find('list');
+		$filterData['eye'] = $this->EyeColour->find('list');
+		$filterData['nationality'] = $this->Nationality->find('list');
+		
+		if(!empty($this->request->data)) {
+			if(!empty($this->request->data['extras'])) {
+				foreach($this->request->data['extras'] as $column=>$condition) {
+					if(!empty($condition)) {
+						$filterConditions['Extra.'.$column] = $condition; 
+					}
+				}
+			}
+		}
 		$this->Extra->recursive = 0;
-		$this->set('extras', $this->paginate());
+		$this->set('extras', $this->paginate($filterConditions));
+		$this->set('filterData', $filterData);
 	}
 
 /**

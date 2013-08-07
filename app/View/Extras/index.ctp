@@ -1,27 +1,49 @@
 <div class="extras index">
 	<h2><?php echo __('Extras'); ?></h2>
+	<?php echo $this->Form->create('extras'); ?>
 	<table>
 	    <tr>
-	        <th>Date of Birth</th>
-	        <th>Race</th>
-	        <th>Gender</th>
-	        <th>Is on Whole Bang Shoot</th>
-	        <th>Is in Gmail Contacts</th>
-	        <th>Had Previous Experience</th>
-	        <th>Height</th>
-	        <th>Chest Size</th>
-	        <th>Bra Size</th>
-	        <th>Hip Size</th>
-	        <th>Waist Size</th>
-	        <th>Suit Size</th>
-	        <th>Dress Size</th>
-	        <th>Shoe Size</th>
-	        <th>Collar Size</th>
-	        <th>Hair Colour</th>
-	        <th>Eye Colour</th>
-	        <th>Nationality</th>
+	        <td>Date of Birth</td><td><?php echo $this->Form->input('date_of_birth', array('label'=>false)); ?></td>
+	        </tr>
+	    <tr>
+	        <td>Race</td><td><?php echo $this->Form->input('race_id', array('label'=>false,'empty'=>true, 'options'=>$filterData['race'])); ?></td>
+	        </tr>
+	    <tr>
+	        <td>Gender</td><td><?php echo $this->Form->input('gender_id', array('label'=>false,'empty'=>true, 'options'=>$filterData['gender'])); ?></td>
+	    </tr><tr>
+	        <td>Is on Whole Bang Shoot</td><td><?php echo $this->Form->input('is_on_whole_bang_shoot', array('label'=>false,'empty'=>true, 'options'=>array('0'=>'No', '1'=>'Yes'))); ?></td>
+	    </tr><tr>
+	        <td>Is in Gmail Contacts</td><td><?php echo $this->Form->input('is_on_gmail_contacts', array('label'=>false,'empty'=>true, 'options'=>array('0'=>'No', '1'=>'Yes'))); ?></td>
+	    </tr><tr>
+	        <td>Had Previous Experience</td><td><?php echo $this->Form->input('had_previous_experience', array('label'=>false,'empty'=>true, 'options'=>array('0'=>'No', '1'=>'Yes'))); ?></td>
+	    </tr><tr>
+	        <td>Height</td><td><?php echo $this->Form->input('height', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Chest Size</td><td><?php echo $this->Form->input('chest_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Bra Size</td><td><?php echo $this->Form->input('bra_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Hip Size</td><td><?php echo $this->Form->input('hips_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Waist Size</td><td><?php echo $this->Form->input('waist_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Suit Size</td><td><?php echo $this->Form->input('suit_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Dress Size</td><td><?php echo $this->Form->input('dress_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Shoe Size</td><td><?php echo $this->Form->input('show_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Collar Size</td><td><?php echo $this->Form->input('collar_size', array('label'=>false)); ?></td>
+	    </tr><tr>
+	        <td>Hair Colour</td><td><?php echo $this->Form->input('hair_colour_id', array('label'=>false,'empty'=>true, 'options'=>$filterData['hair'])); ?></td>
+	    </tr><tr>
+	        <td>Eye Colour</td><td><?php echo $this->Form->input('eye_colour_id', array('label'=>false,'empty'=>true, 'options'=>$filterData['eye'])); ?></td>
+	    </tr>
+	    <tr>
+	        <td>Nationality</td><td><?php echo $this->Form->input('nationality_id', array('label'=>false,'empty'=>true, 'options'=>$filterData['nationality'])); ?></td>
 	    </tr>
 	</table>
+	<?php echo $this->Form->end('Filter'); ?>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
