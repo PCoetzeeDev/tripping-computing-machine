@@ -45,6 +45,8 @@ class ExtrasController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->layout = 'ajax';
+		
 		if (!$this->Extra->exists($id)) {
 			throw new NotFoundException(__('Invalid extra'));
 		}
