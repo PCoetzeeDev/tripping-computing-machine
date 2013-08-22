@@ -21,6 +21,47 @@
 	padding:0;
 }
 
+/** Extras index specific styles **/
+.categoryHeader {
+    text-align:center;
+    font-weight:bolder;
+}
+.categoryHeader:hover {
+    cursor:pointer;
+    background-color:#ddd;
+}
+.categoryContent {
+    display:none;
+}
+#ajaxDialog {
+    
+}
+.ui-menu { width: 150px; }
+.ui-menu{
+   z-index: 1000;
+}
+
+#menubar-layout-container > .ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#menubar-layout-container > .ui-menu > .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.ui-menu .ui-menu-icon{
+   display: none;
+}
+
 /** General Style Info **/
 body {
 	background: #003d4c;
@@ -115,7 +156,7 @@ div.form,
 div.index,
 div.view {
 	float:right;
-	width:76%;
+	width:98%;
 	border-left:1px solid #666;
 	padding:10px 2%;
 }
@@ -157,7 +198,6 @@ th a.desc:after {
 }
 table tr td {
 	padding: 6px;
-	text-align: left;
 	vertical-align: top;
 	border-bottom:1px solid #ddd;
 }
